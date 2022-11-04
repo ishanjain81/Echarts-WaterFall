@@ -36,7 +36,7 @@ function processData(data){
     data.forEach(element => {
         diff.push({
             category: element.subcategory,
-            diff: Number((element.d__2022sale - element.d__2021sale).toFixed(2))
+            diff: Number((element.d__2021sale - element.d__2022sale).toFixed(2))
         })
     });
     return diff;
@@ -52,7 +52,16 @@ function plotCurve(data){
 
     for(var i = 0;i < data.length; i++){
         total += data[i].diff;
+        if(data[i].diff >= 0){
+            profit += data[i].diff;
+        }
+        else{
+            loss += data[i].diff;
+        }
     }
+
+    profit = Number(profit.toFixed(2));
+    loss = Number(loss.toFixed(2));
     
     // sorting on basis of difference
     data.sort(function(a, b){return a.diff - b.diff});
@@ -108,11 +117,9 @@ function plotCurve(data){
         if (val >= 0) {
           positive.push(val);
           negative.push('-');
-          profit += data[i].diff;
         } else {
           positive.push('-');
           negative.push(-val);
-          loss += data[i].diff;
         }
       
         if (i === 0) {
