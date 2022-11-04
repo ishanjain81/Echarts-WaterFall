@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#top{
+    height: 10vh;
+    border: 3px solid black;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    color: purple;
+}
+
+#charts{
+    display: flex;
+}
+
+#Aplha-Charts{
+    height: 90vh;
+    border: 3px solid black;
+    width: 80vw;
+}
+
+#i-aplha-charts{
+    height: 90vh;
+    border: 2px solid black;
+    width: 20vw;
+}
+
+.align{
+    width: 100%;
+    height: 10%;
+    border-bottom: 5px solid black;
+    display: flex;
+}
+
+#NetChange h2{
+    margin-left: 5%;
+    font-family: sans-serif;
+    font-weight: 800;
+}
+
+.left-value{
+    height: 100%;
+    width: 50vw;
+    border: 2px solid rgb(0, 73, 128);
+    border-left: 5px solid rgb(0, 73, 128);
+    display: flex;
+    align-items: center;
+}
+
+.left-value p{
+    font-family: sans-serif;
+    margin-left: 5%;
+    font-size: large;
+    font-weight: 700;
+}
+
+.right-value{
+    height: 100%;
+    width: 50vw;
+    /* border: 2px solid yellow; */
+    display: flex;
+    align-items: center;
+}
+
+.right-value p{
+    margin-left: 5%;
+    font-size: large;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    #top{
+        text-align: center;
+        font-size: 100%;
+    }
+    #top h1{
+        font-size: 2rem;
+    }
+    #Aplha-Charts{
+        width: 100vw;
+    }
+    #i-aplha-charts{
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    #top h1{
+        font-size: 100%;
+    }
+}
